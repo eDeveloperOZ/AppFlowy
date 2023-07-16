@@ -43,6 +43,7 @@ class CellControllerBuilder {
       case FieldType.DateTime:
       case FieldType.LastEditedTime:
       case FieldType.CreatedTime:
+      case FieldType.Deadline:
         final cellDataLoader = CellDataLoader(
           cellContext: _cellContext,
           parser: DateCellDataParser(),

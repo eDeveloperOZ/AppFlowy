@@ -10,6 +10,7 @@ extension FieldTypeListExtension on FieldType {
       case FieldType.DateTime:
       case FieldType.LastEditedTime:
       case FieldType.CreatedTime:
+      case FieldType.Deadline:
         return "grid/field/date";
       case FieldType.MultiSelect:
         return "grid/field/multi_select";
@@ -24,7 +25,8 @@ extension FieldTypeListExtension on FieldType {
       case FieldType.Checklist:
         return "grid/field/checklist";
     }
-    throw UnimplementedError;
+    throw UnimplementedError(
+        'The field type ${this} is not implemented in the FieldTypeListExtension.iconName() method. Please implement it.');
   }
 
   String title() {
@@ -37,6 +39,8 @@ extension FieldTypeListExtension on FieldType {
         return LocaleKeys.grid_field_updatedAtFieldName.tr();
       case FieldType.CreatedTime:
         return LocaleKeys.grid_field_createdAtFieldName.tr();
+      case FieldType.Deadline:
+        return LocaleKeys.grid_field_deadlineFieldName.tr();
       case FieldType.MultiSelect:
         return LocaleKeys.grid_field_multiSelectFieldName.tr();
       case FieldType.Number:
@@ -50,6 +54,7 @@ extension FieldTypeListExtension on FieldType {
       case FieldType.Checklist:
         return LocaleKeys.grid_field_checklistFieldName.tr();
     }
-    throw UnimplementedError;
+    throw UnimplementedError(
+        'The field type ${this} is not implemented in the FieldTypeListExtension.title() method. Please implement it.');
   }
 }

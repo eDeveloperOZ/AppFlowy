@@ -387,6 +387,7 @@ Widget? _buildHeaderIcon(GroupData customData) {
     case FieldType.DateTime:
     case FieldType.LastEditedTime:
     case FieldType.CreatedTime:
+    case FieldType.Deadline:
       break;
     case FieldType.MultiSelect:
       break;

@@ -25,7 +25,8 @@ class GridDateCell extends GridCellWidget {
   final bool editable;
 
   /// The [GridDateCell] is used by Field Type [FieldType.DateTime],
-  /// [FieldType.CreatedTime], [FieldType.LastEditedTime]. So it needs
+  /// [FieldType.CreatedTime], [FieldType.LastEditedTime] and [FieldType.Deadline]
+  /// . So it needs
   /// to know the field type.
   final FieldType fieldType;
   final CellControllerBuilder cellControllerBuilder;

@@ -98,6 +98,7 @@ async fn export_and_then_import_meta_csv_test() {
           FieldType::Checklist => {},
           FieldType::LastEditedTime => {},
           FieldType::CreatedTime => {},
+          FieldType::Deadline => {},
         }
       } else {
         panic!(
@@ -179,6 +180,7 @@ async fn history_database_import_test() {
           FieldType::Checklist => {},
           FieldType::LastEditedTime => {},
           FieldType::CreatedTime => {},
+          FieldType::Deadline => {},
         }
       } else {
         panic!(

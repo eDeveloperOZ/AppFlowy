@@ -41,6 +41,7 @@ class CardCellBuilder<CustomCardData> {
       case FieldType.DateTime:
       case FieldType.LastEditedTime:
       case FieldType.CreatedTime:
+      case FieldType.Deadline:
         return DateCardCell<CustomCardData>(
           renderHook: renderHook?.renderHook[FieldType.DateTime],
           cellControllerBuilder: cellControllerBuilder,

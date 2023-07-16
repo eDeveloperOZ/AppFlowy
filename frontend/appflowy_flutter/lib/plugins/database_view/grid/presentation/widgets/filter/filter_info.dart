@@ -27,6 +27,7 @@ class FilterInfo {
       FieldType.DateTime,
       FieldType.LastEditedTime,
       FieldType.CreatedTime,
+      FieldType.Deadline,
     ].contains(filter.fieldType)) {
       return null;
     }

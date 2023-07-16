@@ -75,6 +75,7 @@ TypeOptionWidgetBuilder makeTypeOptionWidgetBuilder({
     case FieldType.DateTime:
     case FieldType.LastEditedTime:
     case FieldType.CreatedTime:
+    case FieldType.Deadline:
       return DateTypeOptionWidgetBuilder(
         makeTypeOptionContextWithDataController<DateTypeOptionPB>(
           viewId: viewId,
@@ -205,6 +206,7 @@ TypeOptionContext<T>
     case FieldType.DateTime:
     case FieldType.LastEditedTime:
     case FieldType.CreatedTime:
+    case FieldType.Deadline:
       return DateTypeOptionContext(
         dataController: dataController,
         dataParser: DateTypeOptionDataParser(),

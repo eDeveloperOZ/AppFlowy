@@ -25,9 +25,10 @@ async fn grid_cell_update() {
       let cell_changeset = match field_type {
         FieldType::RichText => "".to_string(),
         FieldType::Number => "123".to_string(),
-        FieldType::DateTime | FieldType::LastEditedTime | FieldType::CreatedTime => {
-          make_date_cell_string("123")
-        },
+        FieldType::DateTime
+        | FieldType::LastEditedTime
+        | FieldType::CreatedTime
+        | FieldType::Deadline => make_date_cell_string("123"),
         FieldType::SingleSelect => {
           let type_option = field
             .get_type_option::<SingleSelectTypeOption>(field.field_type)

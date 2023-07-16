@@ -35,9 +35,10 @@ impl std::convert::From<&Filter> for FilterPB {
     let bytes: Bytes = match filter.field_type {
       FieldType::RichText => TextFilterPB::from(filter).try_into().unwrap(),
       FieldType::Number => NumberFilterPB::from(filter).try_into().unwrap(),
-      FieldType::DateTime | FieldType::LastEditedTime | FieldType::CreatedTime => {
-        DateFilterPB::from(filter).try_into().unwrap()
-      },
+      FieldType::DateTime
+      | FieldType::LastEditedTime
+      | FieldType::CreatedTime
+      | FieldType::Deadline => DateFilterPB::from(filter).try_into().unwrap(),
       FieldType::SingleSelect => SelectOptionFilterPB::from(filter).try_into().unwrap(),
       FieldType::MultiSelect => SelectOptionFilterPB::from(filter).try_into().unwrap(),
       FieldType::Checklist => ChecklistFilterPB::from(filter).try_into().unwrap(),
@@ -200,7 +201,10 @@ impl TryInto<UpdateFilterParams> for UpdateFilterPayloadPB {
         condition = filter.condition as u8;
         content = filter.content;
       },
-      FieldType::DateTime | FieldType::LastEditedTime | FieldType::CreatedTime => {
+      FieldType::DateTime
+      | FieldType::LastEditedTime
+      | FieldType::CreatedTime
+      | FieldType::Deadline => {
         let filter = DateFilterPB::try_from(bytes).map_err(|_| ErrorCode::ProtobufSerde)?;
         condition = filter.condition as u8;
         content = DateFilterContentPB {

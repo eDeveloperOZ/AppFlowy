@@ -95,6 +95,7 @@ class GridCreateFilterBloc
       case FieldType.DateTime:
       case FieldType.LastEditedTime:
       case FieldType.CreatedTime:
+      case FieldType.Deadline:
         final timestamp = DateTime.now().millisecondsSinceEpoch ~/ 1000;
         return _filterBackendSvc.insertDateFilter(
           fieldId: fieldId,

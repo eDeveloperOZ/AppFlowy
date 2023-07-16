@@ -158,6 +158,7 @@ GridCellStyle? _customCellStyle(FieldType fieldType) {
     case FieldType.DateTime:
     case FieldType.LastEditedTime:
     case FieldType.CreatedTime:
+    case FieldType.Deadline:
       return DateCellStyle(
         alignment: Alignment.centerLeft,
       );

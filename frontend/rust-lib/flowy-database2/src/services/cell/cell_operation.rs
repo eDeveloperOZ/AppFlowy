@@ -329,8 +329,8 @@ impl<'a> CellBuilder<'a> {
               cells.insert(field_id, insert_date_cell(timestamp, Some(false), field));
             }
           },
-          FieldType::LastEditedTime | FieldType::CreatedTime => {
-            tracing::warn!("Shouldn't insert cell data to cell whose field type is LastEditedTime or CreatedTime");
+          FieldType::LastEditedTime | FieldType::CreatedTime | FieldType::Deadline => {
+            tracing::warn!("Shouldn't insert cell data to cell whose field type is LastEditedTime or CreatedTime or Deadline");
           },
           FieldType::SingleSelect | FieldType::MultiSelect => {
             if let Ok(ids) = SelectOptionIds::from_cell_str(&cell_str) {

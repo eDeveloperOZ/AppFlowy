@@ -488,6 +488,7 @@ pub enum FieldType {
   Checklist = 7,
   LastEditedTime = 8,
   CreatedTime = 9,
+  Deadline = 10,
 }
 
 impl Display for FieldType {
@@ -516,11 +517,13 @@ impl FieldType {
 
   pub fn default_cell_width(&self) -> i32 {
     match self {
-      FieldType::DateTime | FieldType::LastEditedTime | FieldType::CreatedTime => 180,
+      FieldType::DateTime
+      | FieldType::LastEditedTime
+      | FieldType::CreatedTime
+      | FieldType::Deadline => 180,
       _ => 150,
     }
   }
-
   pub fn default_name(&self) -> String {
     let s = match self {
       FieldType::RichText => "Text",
@@ -533,7 +536,9 @@ impl FieldType {
       FieldType::Checklist => "Checklist",
       FieldType::LastEditedTime => "Last edited time",
       FieldType::CreatedTime => "Created time",
+      FieldType::Deadline => "Time Left",
     };
+    tracing::debug!("---------default name: {}---------- ", s);
     s.to_string()
   }
 
@@ -553,6 +558,7 @@ impl FieldType {
     matches!(self, FieldType::DateTime)
       || matches!(self, FieldType::LastEditedTime)
       || matches!(self, FieldType::CreatedTime)
+      || matches!(self, FieldType::Deadline)
   }
 
   pub fn is_single_select(&self) -> bool {
@@ -561,6 +567,10 @@ impl FieldType {
 
   pub fn is_multi_select(&self) -> bool {
     matches!(self, FieldType::MultiSelect)
+  }
+
+  pub fn is_deadline(&self) -> bool {
+    matches!(self, FieldType::Deadline)
   }
 
   pub fn is_last_edited_time(&self) -> bool {
@@ -589,6 +599,7 @@ impl FieldType {
 
   pub fn is_auto_update(&self) -> bool {
     self.is_last_edited_time()
+    // TODO: add the deadline type
   }
 }
 

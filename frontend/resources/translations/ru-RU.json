@@ -296,6 +296,7 @@
       "dateFieldName": "Дата",
       "updatedAtFieldName": "Последнее изменение",
       "createdAtFieldName": "Создано",
+      "deadlineFieldName": "крайний срок",
       "numberFieldName": "Число",
       "singleSelectFieldName": "Выбор",
       "multiSelectFieldName": "Выбор нескольких",

@@ -84,6 +84,7 @@ impl TypeCellData {
     self.field_type == FieldType::DateTime
       || self.field_type == FieldType::LastEditedTime
       || self.field_type == FieldType::CreatedTime
+      || self.field_type == FieldType::Deadline
   }
 
   pub fn is_single_select(&self) -> bool {

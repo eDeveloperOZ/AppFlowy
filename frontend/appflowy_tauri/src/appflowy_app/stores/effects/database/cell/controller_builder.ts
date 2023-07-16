@@ -47,6 +47,7 @@ export class CellControllerBuilder {
       case FieldType.DateTime:
       case FieldType.LastEditedTime:
       case FieldType.CreatedTime:
+      case FieldType.Deadline:
         return this.makeDateCellController();
       case FieldType.URL:
         return this.makeURLCellController();

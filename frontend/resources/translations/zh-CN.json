@@ -245,13 +245,13 @@
       "sortBy": "排序",
       "Properties": "属性",
       "group": "组",
-	"addFilter": "添加筛选",
+      "addFilter": "添加筛选",
       "deleteFilter": "删除筛选",
       "filterBy": "以……筛选",
       "typeAValue": "请输入一个值",
       "layout": "布局",
       "databaseLayout": "布局"
-},
+    },
     "textFilter": {
       "contains": "包含",
       "doesNotContain": "不包含",
@@ -303,6 +303,7 @@
       "dateFieldName": "日期",
       "updatedAtFieldName": "修改时间",
       "createdAtFieldName": "创建时间",
+      "deadlineFieldName": "最後期限",
       "numberFieldName": "数字",
       "singleSelectFieldName": "单项选择器",
       "multiSelectFieldName": "多项选择器",
@@ -486,4 +487,3 @@
     "github": "在 GitHub 查看"
   }
 }
-

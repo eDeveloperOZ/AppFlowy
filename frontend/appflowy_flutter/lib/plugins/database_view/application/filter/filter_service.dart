@@ -94,6 +94,7 @@ class FilterBackendService {
         FieldType.DateTime,
         FieldType.LastEditedTime,
         FieldType.CreatedTime,
+        FieldType.Deadline,
       ].contains(fieldType),
     );
 

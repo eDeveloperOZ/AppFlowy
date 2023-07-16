@@ -308,6 +308,7 @@ impl FilterController {
 
   #[tracing::instrument(level = "trace", skip_all)]
   async fn refresh_filters(&self, filters: Vec<Arc<Filter>>) {
+    // Update the filter cache
     for filter in filters {
       let field_id = &filter.field_id;
       tracing::trace!("Create filter with type: {:?}", filter.field_type);
@@ -324,7 +325,10 @@ impl FilterController {
             .write()
             .insert(field_id, NumberFilterPB::from_filter(filter.as_ref()));
         },
-        FieldType::DateTime | FieldType::LastEditedTime | FieldType::CreatedTime => {
+        FieldType::DateTime
+        | FieldType::LastEditedTime
+        | FieldType::CreatedTime
+        | FieldType::Deadline => {
           self
             .cell_filter_cache
             .write()

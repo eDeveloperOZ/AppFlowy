@@ -27,6 +27,7 @@ Widget buildFilterChoicechip(FilterInfo filterInfo) {
     case FieldType.DateTime:
     case FieldType.LastEditedTime:
     case FieldType.CreatedTime:
+    case FieldType.Deadline:
       return DateFilterChoicechip(filterInfo: filterInfo);
     case FieldType.MultiSelect:
       return SelectOptionFilterChoicechip(filterInfo: filterInfo);

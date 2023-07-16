@@ -390,6 +390,7 @@ class RowDataBuilder {
         FieldType.DateTime,
         FieldType.LastEditedTime,
         FieldType.CreatedTime,
+        FieldType.Deadline,
       ].contains(fieldInfo.fieldType),
     );
     final timestamp = date.millisecondsSinceEpoch ~/ 1000;

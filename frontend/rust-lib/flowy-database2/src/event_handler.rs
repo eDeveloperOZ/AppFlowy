@@ -273,6 +273,7 @@ pub(crate) async fn get_field_type_option_data_handler(
   data: AFPluginData<TypeOptionPathPB>,
   manager: AFPluginState<Arc<DatabaseManager2>>,
 ) -> DataResult<TypeOptionPB, FlowyError> {
+  tracing::debug!("get_field_type_option_data_handler");
   let params: TypeOptionPathParams = data.into_inner().try_into()?;
   let database_editor = manager.get_database_with_view_id(&params.view_id).await?;
   if let Some((field, data)) = database_editor
